@@ -1,0 +1,44 @@
+{
+  "stores": [
+    {
+      "id": 1234,
+      "name": "Sample store",
+      "location": "Sample location of the store ST",
+      "logo_url": "http://yourlogohere.com",
+      "created_at": "2022-10-21T01:52:44.530Z",
+      "updated_at": "2022-10-21T01:52:44.530Z"
+    },
+    {
+      "id": 1,
+      "name": "Sample store1",
+      "location": "Sample location of the store ST",
+      "logo_url": "http://yourlogohere.com",
+      "created_at": "2022-10-21T01:52:44.530Z",
+      "updated_at": "2022-10-21T01:52:44.530Z"
+    },
+    {
+      "id": 2,
+      "name": "Sample store2",
+      "location": "Sample location of the store ST",
+      "logo_url": "http://yourlogohere.com",
+      "created_at": "2022-10-21T01:52:44.530Z",
+      "updated_at": "2022-10-21T01:52:44.530Z"
+    },
+    {
+      "id": 3,
+      "name": "Sample store3",
+      "location": "Sample location of the store ST",
+      "logo_url": "http://yourlogohere.com",
+      "created_at": "2022-10-21T01:52:44.530Z",
+      "updated_at": "2022-10-21T01:52:44.530Z"
+    },
+    {
+      "id": 4,
+      "name": "Sample store4",
+      "location": "Sample location of the store ST",
+      "logo_url": "http://yourlogohere.com",
+      "created_at": "2022-10-21T01:52:44.530Z",
+      "updated_at": "2022-10-21T01:52:44.530Z"
+    }
+  ]
+}
