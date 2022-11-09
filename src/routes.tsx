@@ -2,17 +2,19 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import Landing from "./pages/Landing";
+import ProductsDisplay from "./pages/ProductsDisplay";
 
 const AppRouter:React.FC =() => {
   const router = createBrowserRouter([
     {
       path: '/',
-      element: <h1>This is the root route</h1>,
+      element: <Landing />,
       errorElement: <h1>This is the wrong route</h1>
     },
     {
-      path: '/secondroute',
-      element: <h1>This is the second route</h1>
+      path: '/products',
+      element: <ProductsDisplay />
     }
   ]);
   return(
