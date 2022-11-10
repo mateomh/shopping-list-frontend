@@ -1,16 +1,21 @@
+import { useLoaderData } from "react-router-dom";
+import DataTable from "../components/DataTable";
+import { ProductData } from "../utils/types/dataTableTypes";
+
 const ProductsDisplay:React.FC = () => {
+  const products = useLoaderData() as ProductData[];
+
+  console.log("$$$$$$$$$ PRODUCTS", products);
   return(
     <div>
-      <hr />
-      <h1>Navbar</h1>
-      <hr />
-      <br />
       <hr />
       Banner
       <hr />
       <br />
       <hr />
-      Table with products
+      <DataTable
+        data = {products} 
+      />
       <hr />
       <br />
       <hr />
