@@ -1,30 +1,21 @@
 import { AgGridReact } from "ag-grid-react";
-import { ProductData } from "../utils/types/dataTableTypes";
+import { ProductData, StoreData } from "../utils/types/dataTableTypes";
 import './DataTable/styles.css';
 import 'ag-grid-community/styles/ag-grid.css';
 import 'ag-grid-community/styles/ag-theme-alpine.css';
 import { useEffect, useRef } from "react";
 
 interface DataTableProps {
-  data: ProductData[];
+  data: ProductData[] | StoreData[];
+  columnDefs: Object[];
 }
 
 const DataTable:React.FC<DataTableProps> = ({
-  data = []
+  data = [],
+  columnDefs = []
 }) => {
   const gridRef = useRef<any>();
   
-  const columnDefs = [
-    { headerName: 'ID', field: "id", resizable: true },
-    { headerName: 'Name', field: "name", resizable: true },
-    { headerName: 'Quantity', field: "quantity", resizable: true },
-    { headerName: 'Description', field: "description", resizable: true },
-    { headerName: 'Image', field: "image_url", resizable: true },
-    // { headerName: 'Category ID', field: "category_id" },
-    // { headerName: 'Created at', field: "created_at" },
-    // { headerName: 'Updated at', field: "updated_at" },
-  ]
-
   useEffect(() => {
     console.log("$$$$$$$$REF",gridRef.current)
   }, [data])
@@ -33,7 +24,7 @@ const DataTable:React.FC<DataTableProps> = ({
     <div className="ag-theme-alpine data-table-container">
       <AgGridReact
         ref = {gridRef}
-        rowData = {data}
+        rowData = {data as any}
         columnDefs = {columnDefs} 
       >
       </AgGridReact>

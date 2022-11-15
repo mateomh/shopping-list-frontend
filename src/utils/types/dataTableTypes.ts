@@ -8,3 +8,12 @@ export interface ProductData {
   created_at: string;
   updated_at: string;
 }
+
+export interface StoreData {
+  id: number;
+  name: string;
+  location: string;
+  logo_url: string;
+  created_at: string;
+  updated_at: string;
+}
