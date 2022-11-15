@@ -11,26 +11,31 @@ import './NavBar/styles.css';
 const NavBar:React.FC = () => {
   return(
     <div className="navbar">
+      <a
+        href="/"
+        className='logo'
+      >
+      </a>
       <a 
         href="/"
-        className='link'
+        className='link-selected link'
       >
         <FontAwesomeIcon icon={faHouse} />
-        HOME  
+        Home
       </a>
       <a 
         href="/products"
         className='link'
       >
         <FontAwesomeIcon icon={faBasketShopping} />
-        PRODUCTS 
+        Products
       </a>
       <a 
         href="/stores"
         className='link'
       >
         <FontAwesomeIcon icon={faCashRegister} />
-        STORES
+        Stores
       </a>
       <a 
         href="/products"

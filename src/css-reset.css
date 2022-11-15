@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Oleo+Script:400|Open+Sans:300,300italic,600,600italic,800");
+
 *, 
 *::before, 
 *::after {
@@ -6,6 +8,36 @@
   padding: 0;
 }
 
-a {
-  text-decoration: none;
+#root {
+  --color1: #8ECAE6;
+  --color2: #219EBC;
+  --color3: #023047;
+  --color4: #ffb703;
+  --color5: #FB8500;
+  /* Alternatve palette */
+  --color6: #233D4D;
+  --color7: #FE7F2D;
+  --color8: #FCCA46;
+  --color9: #A1C181;
+  --color10: #619B8A;
+  /* Elements color definitions */
+  /*Buttons*/
+  --button-background: var(--color2);
+  /*Navbar*/
+  --navbar-background: var(--color4);
+  --navbar-foreground: var(--color3);
+  /*Links*/
+  --link-text: var(--color3);
+  --link-hover-background: whitesmoke;
+  --link-selected-background: var(--color4)
 }
+
+body {
+  background-color: #e9e9e9;
+  font-family: 'Open Sans', sans-serif;
+}
+
+a, a:hover, a:visited, a:active {
+  color: inherit;
+  text-decoration: none;
+ }
