@@ -4,7 +4,8 @@ import {
 } from "react-router-dom";
 import Landing from "./pages/Landing";
 import ProductsDisplay from "./pages/ProductsDisplay";
-import { productsLoader } from "./utils/data-loaders/products-loader";
+import StoresDisplay from "./pages/StoresDisplay";
+import { productsLoader, storesLoader } from "./utils/data-loaders/data-loaders";
 
 const AppRouter:React.FC =() => {
   const router = createBrowserRouter([
@@ -17,7 +18,12 @@ const AppRouter:React.FC =() => {
       path: '/products',
       element: <ProductsDisplay />,
       loader: productsLoader
-    }
+    },
+    {
+      path: '/stores',
+      element: <StoresDisplay />,
+      loader: storesLoader
+    },
   ]);
   return(
     <RouterProvider router={router} />

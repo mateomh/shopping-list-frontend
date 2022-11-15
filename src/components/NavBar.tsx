@@ -3,6 +3,7 @@ import {
   faHouse,
   faBasketShopping,
   faCartShopping,
+  faCashRegister
 } from '@fortawesome/free-solid-svg-icons';
 // import { solid, regular, brands, icon } from '@fortawesome/fontawesome-svg-core/import.macro' // <-- import styles to be used
 import './NavBar/styles.css';
@@ -23,6 +24,13 @@ const NavBar:React.FC = () => {
       >
         <FontAwesomeIcon icon={faBasketShopping} />
         PRODUCTS 
+      </a>
+      <a 
+        href="/stores"
+        className='link'
+      >
+        <FontAwesomeIcon icon={faCashRegister} />
+        STORES
       </a>
       <a 
         href="/products"
