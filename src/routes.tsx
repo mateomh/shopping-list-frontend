@@ -2,6 +2,7 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import Error from "./pages/Error";
 import Landing from "./pages/Landing";
 import ProductsDisplay from "./pages/ProductsDisplay";
 import StoresDisplay from "./pages/StoresDisplay";
@@ -12,7 +13,7 @@ const AppRouter:React.FC =() => {
     {
       path: '/',
       element: <Landing />,
-      errorElement: <h1>This is the wrong route</h1>
+      errorElement: <Error />
     },
     {
       path: '/products',
