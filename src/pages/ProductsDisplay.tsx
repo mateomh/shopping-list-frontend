@@ -1,4 +1,5 @@
 import { useLoaderData } from "react-router-dom";
+import Banner from "../components/Banner";
 import DataTable from "../components/DataTable";
 import { ProductData } from "../utils/types/dataTableTypes";
 
@@ -18,11 +19,10 @@ const ProductsDisplay:React.FC = () => {
   console.log("$$$$$$$$$ PRODUCTS", products);
   return(
     <div>
-      <hr />
-      Banner
-      <hr />
-      <br />
-      <hr />
+      <Banner
+        title = "Products"
+        text = "Find the full list of products here" 
+      />
       <DataTable
         data = {products} 
         columnDefs = {columnDefs}
