@@ -3,6 +3,8 @@ import Banner from "../components/Banner";
 import DataTable from "../components/DataTable";
 import { ProductData } from "../utils/types/dataTableTypes";
 
+const ProductImage = require('../assets/images/supermarket.jpg');
+
 const ProductsDisplay:React.FC = () => {
   const products = useLoaderData() as ProductData[];
   const columnDefs = [
@@ -22,6 +24,7 @@ const ProductsDisplay:React.FC = () => {
       <Banner
         title = "Products"
         text = "Find the full list of products here" 
+        image = {ProductImage}
       />
       <DataTable
         data = {products} 
