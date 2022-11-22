@@ -50,4 +50,7 @@ Logomaker.com
 logomakr.com/app/7bjf6n
 logomakr.com/app/1s09lH
 Photo by <a href="https://unsplash.com/@franki?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Franki Chamaki</a> on <a href="https://unsplash.com/s/photos/supermarket?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
+Photo by <a href="https://unsplash.com/@jakecolling?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jake Colling</a> on <a href="https://unsplash.com/s/photos/stores?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  
   

@@ -1,6 +1,9 @@
 import { useLoaderData } from "react-router-dom";
+import Banner from "../components/Banner";
 import DataTable from "../components/DataTable";
 import { StoreData } from "../utils/types/dataTableTypes";
+
+const StoreImage = require('../assets/images/stores.jpg');
 
 const StoresDisplay:React.FC = () => {
   const stores = useLoaderData() as StoreData[];
@@ -16,11 +19,11 @@ const StoresDisplay:React.FC = () => {
 
   return(
     <div>
-      <hr />
-      Banner
-      <hr />
-      <br />
-      <hr />
+      <Banner
+        title = "Stores"
+        text = "Find the full list of available stores"
+        image = {StoreImage}
+      />
       <DataTable
         data = {stores}
         columnDefs = {columnDefs}
