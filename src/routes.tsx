@@ -2,6 +2,7 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import AppWrapper from "./components/AppWrapper";
 import Error from "./pages/Error";
 import Landing from "./pages/Landing";
 import ProductsDisplay from "./pages/ProductsDisplay";
@@ -12,20 +13,25 @@ const AppRouter:React.FC =() => {
   const router = createBrowserRouter([
     {
       path: '/',
-      element: <Landing />,
-      errorElement: <Error />
-    },
-    {
-      path: '/products',
-      element: <ProductsDisplay />,
-      loader: productsLoader
-    },
-    {
-      path: '/stores',
-      element: <StoresDisplay />,
-      loader: storesLoader
-    },
+      element: <AppWrapper />,
+      children: [{
+        path: '/',
+        element: <Landing />,
+        errorElement: <Error />
+      },
+      {
+        path: '/products',
+        element: <ProductsDisplay />,
+        loader: productsLoader
+      },
+      {
+        path: '/stores',
+        element: <StoresDisplay />,
+        loader: storesLoader
+      }]
+    }
   ]);
+
   return(
     <RouterProvider router={router} />
   );
