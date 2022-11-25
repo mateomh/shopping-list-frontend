@@ -7,15 +7,18 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 // import { solid, regular, brands, icon } from '@fortawesome/fontawesome-svg-core/import.macro' // <-- import styles to be used
 import './NavBar/styles.css';
-import { Link } from 'react-router-dom';
-import { BaseSyntheticEvent } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useNavbarHighlight } from '../utils/hooks/useNavBarHighlight';
 
 const NavBar:React.FC = () => {
-  const clickItem = (event:BaseSyntheticEvent) => {
-    const selectedLink = document.getElementsByClassName("link-selected")[0];
-    selectedLink.classList.toggle("link-selected");
-    event.target.classList.toggle("link-selected");
-  }
+  const location = useLocation();
+  const navbarChange = useNavbarHighlight();
+
+  useEffect(() => {
+    navbarChange(location.pathname);
+  },[location, navbarChange]);
+
 
   return(
     <div className="navbar">
@@ -27,7 +30,7 @@ const NavBar:React.FC = () => {
       <Link
         to="/"
         className='link-selected link'
-        onClick={clickItem}
+        id='/'
       >
         <FontAwesomeIcon icon={faHouse} />
         Home
@@ -35,7 +38,7 @@ const NavBar:React.FC = () => {
       <Link 
         to="/products"
         className='link'
-        onClick={clickItem}
+        id='/products'
       >
         <FontAwesomeIcon icon={faBasketShopping} />
         Products
@@ -43,7 +46,7 @@ const NavBar:React.FC = () => {
       <Link 
         to="/stores"
         className='link'
-        onClick={clickItem}
+        id='/stores'
       >
         <FontAwesomeIcon icon={faCashRegister} />
         Stores
@@ -51,7 +54,7 @@ const NavBar:React.FC = () => {
       <Link 
         to="/products"
         className='link'
-        onClick={clickItem}
+        id='/shopping-list'
       >
         <FontAwesomeIcon icon={faCartShopping} />
         Shopping List 

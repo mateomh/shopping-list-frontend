@@ -19,6 +19,7 @@ const ProductsDisplay:React.FC = () => {
   ]
 
   console.log("$$$$$$$$$ PRODUCTS", products);
+
   return(
     <div>
       <Banner
