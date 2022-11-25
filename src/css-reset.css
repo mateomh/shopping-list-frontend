@@ -24,7 +24,7 @@
   /*Buttons*/
   --button-background: var(--color2);
   /*Navbar*/
-  --navbar-background: var(--color4);
+  --navbar-background: rgb(233, 233, 233);
   --navbar-foreground: var(--color3);
   /*Links*/
   --link-text: var(--color3);
@@ -35,6 +35,7 @@
 body {
   background-color: #e9e9e9;
   font-family: 'Open Sans', sans-serif;
+  padding-top: 20vh;
 }
 
 a, a:hover, a:visited, a:active {
