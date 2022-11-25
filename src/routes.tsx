@@ -22,12 +22,14 @@ const AppRouter:React.FC =() => {
       {
         path: '/products',
         element: <ProductsDisplay />,
-        loader: productsLoader
+        loader: productsLoader,
+        errorElement: <Error />
       },
       {
         path: '/stores',
         element: <StoresDisplay />,
-        loader: storesLoader
+        loader: storesLoader,
+        errorElement: <Error />
       }]
     }
   ]);

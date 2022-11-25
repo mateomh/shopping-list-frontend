@@ -1,3 +1,11 @@
+export interface ProductsResponse {
+  products: ProductData[];
+}
+
+export interface StoresResponse {
+  stores: StoreData[];
+}
+
 export interface ProductData {
   id: number;
   name: string;
