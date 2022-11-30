@@ -8,7 +8,9 @@ const ProductImage = require('../assets/images/supermarket.jpg');
 const ProductsDisplay:React.FC = () => {
   const products = useLoaderData() as ProductData[];
   const columnDefs = [
-    { headerName: 'ID', field: "id", resizable: true },
+    { headerName: 'ID', field: "id", resizable: true, headerCheckboxSelection: true,
+    checkboxSelection: true,
+    showDisabledCheckboxes: true, },
     { headerName: 'Name', field: "name", resizable: true },
     { headerName: 'Quantity', field: "quantity", resizable: true },
     { headerName: 'Description', field: "description", resizable: true },
