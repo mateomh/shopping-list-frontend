@@ -1,0 +1,16 @@
+@import url('../../css-reset.css');
+
+.add-to-cart-button {
+  background-color: var(--add-to-cart-background);
+  color: var(--add-to-cart-foreground);
+  padding: 0.5rem;
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  border-radius: 1rem;
+  width: 10vw;
+}
+
+.add-to-cart-button b{
+  margin-left: 0.5rem;
+}

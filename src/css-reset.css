@@ -29,7 +29,10 @@
   /*Links*/
   --link-text: var(--color3);
   --link-hover-background: whitesmoke;
-  --link-selected-background: var(--color4)
+  --link-selected-background: var(--color4);
+  /* Add to cart button */
+  --add-to-cart-background: #509826;
+  --add-to-cart-foreground: whitesmoke;
 }
 
 body {
