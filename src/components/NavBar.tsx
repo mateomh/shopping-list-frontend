@@ -52,9 +52,9 @@ const NavBar:React.FC = () => {
         Stores
       </Link>
       <Link 
-        to="/products"
+        to="/list"
         className='link'
-        id='/shopping-list'
+        id='/list'
       >
         <FontAwesomeIcon icon={faCartShopping} />
         Shopping List 

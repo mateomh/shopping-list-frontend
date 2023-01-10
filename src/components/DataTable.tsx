@@ -6,6 +6,8 @@ import 'ag-grid-community/styles/ag-theme-alpine.css';
 import { useCallback, useEffect, useRef, useState } from "react";
 import AddToCartButton from "./AddToCartButton";
 import { useLocation } from "react-router-dom";
+import { useChangeShoppingCart } from "../utils/contexts/CartContext";
+import { AddCartItem } from "../utils/contexts/reducers/Actions";
 
 interface DataTableProps {
   data: ProductData[] | StoreData[];
@@ -19,14 +21,10 @@ const DataTable:React.FC<DataTableProps> = ({
   const gridRef = useRef<any>();
   const location = useLocation();
   const [showAddToCart, setShowAddToCart] = useState(false);
-  
-  useEffect(() => {
-    console.log("$$$$$$$$REF",gridRef.current);
-  }, [data])
+  const {changeCartState: dispatch} = useChangeShoppingCart();
 
   const onSelectionChanged = useCallback(() => {
     const selectedRows = gridRef.current.api.getSelectedRows();
-    console.log("%%%%%%%%%%% SELECTED", selectedRows.length);
 
     if(selectedRows.length > 0) {
       setShowAddToCart(true);
@@ -38,7 +36,7 @@ const DataTable:React.FC<DataTableProps> = ({
 
   const onAddToCart = () => {
     const selectedRows = gridRef.current.api.getSelectedRows();
-    console.log("%%%%%%%%%%% SELECTED", selectedRows);
+    selectedRows.map((item:ProductData) => dispatch(AddCartItem(item)));
   } 
   
   return(
