@@ -8,10 +8,11 @@ const ProductImage = require('../assets/images/supermarket.jpg');
 const ProductsDisplay:React.FC = () => {
   const products = useLoaderData() as ProductData[];
   const columnDefs = [
-    { headerName: 'ID', field: "id", resizable: true, headerCheckboxSelection: true,
-    checkboxSelection: true,
-    showDisabledCheckboxes: true, },
-    { headerName: 'Name', field: "name", resizable: true },
+    // { headerName: 'ID', field: "id", resizable: true, headerCheckboxSelection: true,
+    // checkboxSelection: true,
+    // showDisabledCheckboxes: true, },
+    { headerName: 'Name', field: "name", resizable: true, headerCheckboxSelection: true,
+      checkboxSelection: true, showDisabledCheckboxes: true, },
     { headerName: 'Quantity', field: "quantity", resizable: true },
     { headerName: 'Description', field: "description", resizable: true },
     { headerName: 'Image', field: "image_url", resizable: true },
@@ -19,8 +20,6 @@ const ProductsDisplay:React.FC = () => {
     // { headerName: 'Created at', field: "created_at" },
     // { headerName: 'Updated at', field: "updated_at" },
   ]
-
-  console.log("$$$$$$$$$ PRODUCTS", products);
 
   return(
     <div>
