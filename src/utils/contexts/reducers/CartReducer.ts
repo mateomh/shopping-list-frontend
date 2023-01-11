@@ -1,3 +1,4 @@
+import _ from "lodash";
 import { Action } from "./Actions";
 
 interface ShoppingCartItem {
@@ -16,7 +17,8 @@ export const CartReducer = (state:ShoppingCartState, action: Action):ShoppingCar
 
   switch (type) {
     case 'ADD_ITEM':
-      return {...state, products: [...state.products, {...payload, quantity: 1}]};
+      const newState:ShoppingCartState = {...state, products: [...state.products, {...payload, quantity: 1}]};
+      return {products: _.uniqBy(newState.products, 'id')};
     case 'REMOVE_ITEM':
       return {...state, products: state.products.filter((item)=> item.id !== payload.id)}
     default:
