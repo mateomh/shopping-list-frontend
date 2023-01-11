@@ -36,7 +36,6 @@ const AppRouter:React.FC =() => {
         {
           path: '/list',
           element: <ShoppingList />,
-          loader: storesLoader,
           errorElement: <Error />
         },
       ]

@@ -32,3 +32,20 @@ export const productsLoader = async ():Promise<Object> => {
   const data:ProductsResponse = await fetchData(productsUrl, options);
   return data?.products;
 }
+
+export const generateStoreList = async (product_ids:number[]):Promise<Object> => {
+  const generateStoreListUrl = `${apiUrl}/calculate/get_stores`
+  
+  const headers = new Headers();
+  headers.append("Content-Type", "application/json");
+
+  const options = {
+    method: 'POST',
+    headers,
+    body: JSON.stringify( {
+      product_ids: product_ids,
+    }),
+  }
+  const data:any = await fetchData(generateStoreListUrl, options);
+  return {"result": "yes"};
+}

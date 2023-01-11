@@ -1,5 +1,6 @@
 import DataTable from "../components/DataTable";
 import { useShoppingCart } from "../utils/contexts/CartContext";
+import { generateStoreList } from "../utils/data-loaders/data-loaders";
 import { ProductData } from "../utils/types/dataTableTypes";
 
 const ShoppingList:React.FC = () => {
@@ -12,8 +13,13 @@ const ShoppingList:React.FC = () => {
     { headerName: 'Image', field: "image_url", resizable: true },
   ];
 
+  const onClick = () => {
+    generateStoreList([1,2,3,4,6]);
+  }
+
   return(
     <div>
+      <button onClick={onClick}>Get information</button>
       <DataTable
           data = {cartContents.products as ProductData[]} 
           columnDefs = {columnDefs}
