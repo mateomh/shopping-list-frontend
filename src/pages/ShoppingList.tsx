@@ -14,7 +14,8 @@ const ShoppingList:React.FC = () => {
   ];
 
   const onClick = () => {
-    generateStoreList([1,2,3,4,6]);
+    const cartContentsIds = cartContents.products.map(item => item.id)
+    generateStoreList(cartContentsIds);
   }
 
   return(
