@@ -46,6 +46,5 @@ export const generateStoreList = async (product_ids:number[]):Promise<Object> =>
       product_ids: product_ids,
     }),
   }
-  const data:any = await fetchData(generateStoreListUrl, options);
-  return {"result": "yes"};
+  return fetchData(generateStoreListUrl, options);
 }

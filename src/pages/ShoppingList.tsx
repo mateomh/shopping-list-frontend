@@ -1,10 +1,13 @@
+import { useState } from "react";
 import DataTable from "../components/DataTable";
+import ResultsDisplay from "../components/ResultsDisplay";
 import { useShoppingCart } from "../utils/contexts/CartContext";
 import { generateStoreList } from "../utils/data-loaders/data-loaders";
 import { ProductData } from "../utils/types/dataTableTypes";
 
 const ShoppingList:React.FC = () => {
   const cartContents = useShoppingCart();
+  const [response, setResponse] = useState<any>({});
   const columnDefs = [
     { headerName: 'Name', field: "name", resizable: true, headerCheckboxSelection: true,
       checkboxSelection: true, showDisabledCheckboxes: true, },
@@ -13,10 +16,14 @@ const ShoppingList:React.FC = () => {
     { headerName: 'Image', field: "image_url", resizable: true },
   ];
 
-  const onClick = () => {
-    const cartContentsIds = cartContents.products.map(item => item.id)
-    generateStoreList(cartContentsIds);
+  const onClick = async () => {
+    const cartContentsIds = cartContents.products.map(item => item.id);
+    const data = await generateStoreList(cartContentsIds);
+    console.log("%%%%%%%%DATA", data);
+    setResponse(data);
   }
+
+  console.log("$$$$$$$$$RESPONSE", Object.keys(response));
 
   return(
     <div>
@@ -25,6 +32,11 @@ const ShoppingList:React.FC = () => {
           data = {cartContents.products as ProductData[]} 
           columnDefs = {columnDefs}
       />
+      {
+        Object.keys(response).length > 0 ?
+        (<ResultsDisplay info={response}/>)
+        : null
+      }
     </div>
   );
 }
