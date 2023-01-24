@@ -19,11 +19,8 @@ const ShoppingList:React.FC = () => {
   const onClick = async () => {
     const cartContentsIds = cartContents.products.map(item => item.id);
     const data = await generateStoreList(cartContentsIds);
-    console.log("%%%%%%%%DATA", data);
     setResponse(data);
   }
-
-  console.log("$$$$$$$$$RESPONSE", Object.keys(response));
 
   return(
     <div>

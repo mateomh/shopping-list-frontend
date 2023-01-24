@@ -10,10 +10,12 @@ import './NavBar/styles.css';
 import { Link, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useNavbarHighlight } from '../utils/hooks/useNavBarHighlight';
+import { useShoppingCart } from '../utils/contexts/CartContext';
 
 const NavBar:React.FC = () => {
   const location = useLocation();
   const navbarChange = useNavbarHighlight();
+  const cartContents = useShoppingCart();
 
   useEffect(() => {
     navbarChange(location.pathname);
@@ -57,7 +59,9 @@ const NavBar:React.FC = () => {
         id='/list'
       >
         <FontAwesomeIcon icon={faCartShopping} />
-        Shopping List 
+        <span className='product-count'>
+          {cartContents.products.length}
+        </span>
       </Link>
     </div>
   );
