@@ -3,7 +3,7 @@ import { ProductData, StoreData } from "../utils/types/dataTableTypes";
 import './DataTable/styles.css';
 import 'ag-grid-community/styles/ag-grid.css';
 import 'ag-grid-community/styles/ag-theme-alpine.css';
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useRef, useState } from "react";
 import AddToCartButton from "./AddToCartButton";
 import { useLocation } from "react-router-dom";
 import { useChangeShoppingCart } from "../utils/contexts/CartContext";
