@@ -17,9 +17,14 @@ const ResultsDisplay:React.FC<ResultsDisplayProps> = ({
             <AccordionSummary
               expandIcon={<AddCircleOutlineIcon />}
             >
-              <Typography>{store.name}</Typography>
+              <img 
+                src={store.logo_url} 
+                alt={store.name}
+                style={{height: '10vh', width:'10vw'}}
+              />
             </AccordionSummary>
             <AccordionDetails>
+              <Typography variant='h5'>Store: {store.name}</Typography>
               {store.associated_products.map((product: any) => {
                 return(
                   <Typography>{product.name}</Typography>
