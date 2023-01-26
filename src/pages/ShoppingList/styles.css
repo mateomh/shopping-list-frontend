@@ -1,0 +1,27 @@
+@import url('../../css-reset.css');
+
+.get-results {
+  width: 95%;
+  padding: 1rem;
+  margin: 1rem auto ;
+  background-color: var(--get-results-background);
+  color: var(--get-results-foreground);
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
+  font-weight: bolder;
+}
+
+.get-results:hover {
+  color: var(--get-results-background);
+  background-color: var(--get-results-foreground);
+}
+
+.get-results:active {
+  transform: scale(0.98);
+  animation-delay: 500ms;
+}

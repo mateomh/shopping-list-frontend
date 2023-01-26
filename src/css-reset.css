@@ -33,6 +33,8 @@
   /* Add to cart button */
   --add-to-cart-background: #509826;
   --add-to-cart-foreground: whitesmoke;
+  --get-results-background: var(--color8);
+  --get-results-foreground: var(--color6);
 }
 
 body {

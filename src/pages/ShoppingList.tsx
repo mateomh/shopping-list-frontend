@@ -4,10 +4,16 @@ import ResultsDisplay from "../components/ResultsDisplay";
 import { useShoppingCart } from "../utils/contexts/CartContext";
 import { generateStoreList } from "../utils/data-loaders/data-loaders";
 import { ProductData } from "../utils/types/dataTableTypes";
+import { 
+  faBagShopping
+} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import './ShoppingList/styles.css';
 
 const ShoppingList:React.FC = () => {
   const cartContents = useShoppingCart();
   const [response, setResponse] = useState<any>({});
+  const [showResults, setShowResults] = useState(false);
   const columnDefs = [
     { headerName: 'Name', field: "name", resizable: true, headerCheckboxSelection: true,
       checkboxSelection: true, showDisabledCheckboxes: true, },
@@ -19,20 +25,34 @@ const ShoppingList:React.FC = () => {
   const onClick = async () => {
     const cartContentsIds = cartContents.products.map(item => item.id);
     const data = await generateStoreList(cartContentsIds);
+    if(Object.keys(data).length > 0){
+      setShowResults(true);
+    }
     setResponse(data);
   }
 
   return(
     <div>
-      <button onClick={onClick}>Get information</button>
-      <DataTable
-          data = {cartContents.products as ProductData[]} 
-          columnDefs = {columnDefs}
-      />
+      
       {
-        Object.keys(response).length > 0 ?
+        showResults ?
         (<ResultsDisplay info={response}/>)
-        : null
+        :
+        (
+          <>
+            <DataTable
+                data = {cartContents.products as ProductData[]} 
+                columnDefs = {columnDefs}
+            />
+            <button 
+              onClick={onClick}
+              className="get-results"
+            >
+              <FontAwesomeIcon icon={faBagShopping} />
+              Get Results
+            </button>
+          </>
+        )
       }
     </div>
   );
