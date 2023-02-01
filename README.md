@@ -1,56 +1,66 @@
-# Getting Started with Create React App
+![](https://img.shields.io/badge/Typescript-informational) ![](https://img.shields.io/badge/React-9cf)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Shopping List App
 
-## Available Scripts
+> This repo is a shopping list app to help people save money by optimizing their groceries list.
 
-In the project directory, you can run:
 
-### `npm start`
+The objective of this project is to select the cheaper price for the given products and group them by store to show the user which supermarket to go the get the best price according to the date.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Built With
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- Typescript
+- React
+- Context api
+- AGgrid
+- Material-UI
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Setup Locally
 
-### `npm run build`
+To run the application locally you will need to follow several steps to make it work.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+First, you have to check if you have **nodejs** installed on your machine. For this type the following command in your terminal:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+> node -v
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+If **command not found** shows as a response, then go to [nodejs.org](https://nodejs.org/en/) and follow the instructions to install it. After completing the installation the same command should show you a version number.
 
-### `npm run eject`
+Then clone the [repository](https://github.com/mateomh/shopping-list-frontend.git) into your local drive and open a terminal in the root folder of the project and install the necessary packages to make it work by running this command:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+> npm install
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+This will get the project ready to run. After this run the following command to start the development server on **localhost:3000/** and wait for the browser to open:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+> npm start
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+If the browser does not open or you close it by accident, but the server is still running you can type **localhost:3000/** in your address bar to get into the application again.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Authors
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+👤 **Mateo mojica**
 
-### Credits
-Logomaker.com
-logomakr.com/app/7bjf6n
-logomakr.com/app/1s09lH
-Photo by <a href="https://unsplash.com/@franki?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Franki Chamaki</a> on <a href="https://unsplash.com/s/photos/supermarket?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+- Github: [@mateomh](https://github.com/mateomh)
+- Twitter: [@mateo_m_h](https://twitter.com/mateo_m_h)
+- Linkedin: [Mateo mojica](https://linkedin.com/mateo_mojica_hernandez)
+- Medium: [Mateo mojica](https://medium.com/@mateo-mojica)
 
-Photo by <a href="https://unsplash.com/@jakecolling?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jake Colling</a> on <a href="https://unsplash.com/s/photos/stores?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-  
-  
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](issues/).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- 
+
+## 📝 License
+
+This project is [MIT](https://opensource.org/licenses/MIT) licensed.
