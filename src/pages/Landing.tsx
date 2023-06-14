@@ -1,13 +1,10 @@
+import LandingContent from "../components/LandingContent";
+
 const Landing:React.FC = () => {
 
   return(
     <div>
-      <hr />
-      <h1>Navbar</h1>
-      <hr />
-      <br />
-      <hr />
-      Content
+      <LandingContent />
       <hr />
       <br />
       <hr />
