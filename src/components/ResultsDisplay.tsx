@@ -27,7 +27,7 @@ const ResultsDisplay:React.FC<ResultsDisplayProps> = ({
               <Typography variant='h5'>Store: {store.name}</Typography>
               {store.associated_products.map((product: any) => {
                 return(
-                  <Typography>{product.name}</Typography>
+                  <Typography>{product.name} ${product.best_price}</Typography>
                 )
               })}
             </AccordionDetails>
