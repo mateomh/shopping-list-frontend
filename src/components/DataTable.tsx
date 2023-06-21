@@ -8,6 +8,7 @@ import AddToCartButton from "./AddToCartButton";
 import { useLocation } from "react-router-dom";
 import { useChangeShoppingCart } from "../utils/contexts/CartContext";
 import { AddCartItem } from "../utils/contexts/reducers/Actions";
+import ToastMessage from "./ToastMessage";
 
 interface DataTableProps {
   data: ProductData[] | StoreData[];
@@ -22,9 +23,11 @@ const DataTable:React.FC<DataTableProps> = ({
   const location = useLocation();
   const [showAddToCart, setShowAddToCart] = useState(false);
   const {changeCartState: dispatch} = useChangeShoppingCart();
+  const [showToast, setShowToast] = useState(false);
 
   const onSelectionChanged = useCallback(() => {
     const selectedRows = gridRef.current.api.getSelectedRows();
+    setShowToast(false);
 
     if(selectedRows.length > 0) {
       setShowAddToCart(true);
@@ -37,10 +40,12 @@ const DataTable:React.FC<DataTableProps> = ({
   const onAddToCart = () => {
     const selectedRows = gridRef.current.api.getSelectedRows();
     selectedRows.map((item:ProductData) => dispatch(AddCartItem(item)));
+    setShowToast(true);
   } 
   
   return(
     <>
+      <ToastMessage message="Item(s) added to the cart" isVisible={showToast}/>
       <div className="ag-theme-alpine data-table-container">
         <AgGridReact
           ref = {gridRef}
